@@ -21,31 +21,23 @@
 <li>Node.js: Download and install Node.js by following the steps at <a href="https://www.nodejs.org">nodejs.org</a>.</li>
 <li>npm (Node Package Manager): This should come bundled with the Node.js download.</li>
 <li>Git: Required to clone this repository. Download and install at <a href="https://git-scm.com">git-scm.com</a> or ensure it is already installed by running
-<code>
-git --version
-</code></li>
+<code>git --version</code></li>
 </ol>
 
 <h3>Step 1: Clone this Repository</h3>
 <p>To clone this repository to your local machine, use the following command. For more detailed instructions, follow the steps at <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">Github Docs</a> that correspond to your operating system.</p>
-<code>
-git clone git@github.com:DevynJohnson/readmeGenerator.git
-</code>
+<code>git clone git@github.com:DevynJohnson/readmeGenerator.git</code>
 
 <h3>Step 2: Navigate to the Project Directory</h3>
 <p>Open a terminal or command prompt and use the following command to navigate to the project directory:</p>
 
-<code>
-cd "project-directory"
-</code>
+<code>cd "project-directory"</code>
 <p>Replace "project-directory" with the path of the folder the repository where this repository was cloned.</p>
 
 <h3>Step 3: Install Dependencies</h3>
 <p>Install the required npm packages by running:</p>
 
-<code>
-npm install
-</code>
+<code>npm install</code>
 
 <p>This will install all required dependencies required as specified in the package.json file, including <a href="https://www.npmjs.com/package/inquirer">inquirer</a> - an npm package necessary for this program to execute correctly.</p>
 
@@ -54,9 +46,7 @@ npm install
 
 <h3>Step 4: Run the Application</h3>
 Run the application by entering the following command in the terminal:
-<code>
-node index.js
-</code>
+<code>node index.js</code>
 
 <h3>Step 5: Follow the Prompts</h3>
 The application will present a series of prompts about your project to collect the information necessary to create a detailed, professional README.md file. This will include:
@@ -77,17 +67,11 @@ The application will present a series of prompts about your project to collect t
 <p>In the case the application is not functioning properly, attempt the following:</p>
 <ol>
 <li>Check if Node.js and npm are installed correctly by using the following commands to check for the current version of Node.js and npm currently installed on your system, respectively:<br>
-<code>
-node -v
-</code>
+<code>node -v</code>
 <br>
-<code>
-npm -v
-</code></li>
+<code>npm -v</code></li>
 <li>Ensure all dependencies are installed by re-running:
-<p><code>
-npm install
-</code></p></li>
+<code>npm install</code></li>
 <li>Ensure index.js file is located in the root directory of the cloned repository.
 <li>Review any error messages in the terminal for information that may help resolve the issue.</li>
 <li>Reach out to <a href="mailto:dljohnson1313@gmail.com?subject=README Generator Issue">dljohnson1313@gmail.com</a> with an explanation of the issue if you are unable to find a solution using the steps above.</li>
