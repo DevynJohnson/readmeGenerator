@@ -49,7 +49,7 @@ Run the application by entering the following command in the terminal:
 <code>node index.js</code>
 
 <h3>Step 5: Follow the Prompts</h3>
-The application will present a series of prompts about your project to collect the information necessary to create a detailed, professional README.md file. This will include:
+The application will present a series of prompts about your project to collect the information necessary to create a detailed, professional README.md file. This will include:<br>
 <ul>
 <li>Project title</li>
 <li>Description of your project</li>
@@ -66,18 +66,18 @@ The application will present a series of prompts about your project to collect t
 ## Troubleshooting
 <p>In the case the application is not functioning properly, attempt the following:</p>
 <ol>
-<li>Check if Node.js and npm are installed correctly by using the following commands to check for the current version of Node.js and npm currently installed on your system, respectively:<br>
+<li>Check if Node.js and npm are installed correctly by using the following commands to check for the version currently installed on your system, respectively:<br>
 <code>node -v</code>
 <br>
 <code>npm -v</code></li>
-<li>Ensure all dependencies are installed by re-running:
+<li>Ensure all dependencies are installed by re-running
 <code>npm install</code></li>
 <li>Ensure index.js file is located in the root directory of the cloned repository.
 <li>Review any error messages in the terminal for information that may help resolve the issue.</li>
 <li>Reach out to <a href="mailto:dljohnson1313@gmail.com?subject=README Generator Issue">dljohnson1313@gmail.com</a> with an explanation of the issue if you are unable to find a solution using the steps above.</li>
 
 ## Credits
-<p>This project was created by Devyn Johnson. <a href="https://github.com/DevynJohnson">Github</a> | <a href="www.linkedin.com/in/devyn-johnson-a5259213b">LinkedIn</a> | <a href="https://devynjohnson.github.io/online-portfolio/">Portfolio</a>.</p>
+<p>This project was created by Devyn Johnson. <a href="https://github.com/DevynJohnson">Github</a> | <a href="https://www.linkedin.com/in/devyn-johnson-a5259213b">LinkedIn</a> | <a href="https://devynjohnson.github.io/online-portfolio/">Portfolio</a>.</p>
 
 <p>This application uses the inquirer npm package, Copyright (c) 2023 by <a href="https://github.com/SBoudrias">Simon Boudrias</a>, which is licensed under the <a href="https://opensource.org/license/MIT">MIT License</a>.</p>
 
