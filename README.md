@@ -32,7 +32,7 @@
 <p>Open a terminal or command prompt and use the following command to navigate to the project directory:</p>
 
 <code>cd "project-directory"</code>
-<p>Replace "project-directory" with the path of the folder the repository where this repository was cloned.</p>
+<p>Replace "project-directory" with the path of the folder where this repository was cloned.</p>
 
 <h3>Step 3: Install Dependencies</h3>
 <p>Install the required npm packages by running:</p>
