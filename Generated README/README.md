@@ -1,36 +1,40 @@
 
-# Test [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# test [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
             
 ## Description
-<p>Test</p>
+<p>test</p>
             
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
+- [Testing](#testing)
 - [Questions](#questions)
 - [License](#license)
             
 ## Installation
-<p>Test</p>
+<p>test</p>
             
 ## Usage
-<p>Test</p>
+<p>test</p>
             
 ## Credits
-### Author
-<p>Test | <a href="Test">Github Profile</a></p>
-### Contributions
-<p>If you would like to contribute to this project, please see my Github profile linked above and reach out to be added as a collaborator.</p>
-            
-### Collaborators
 
+### Author
+<p>test | <a href="test">Github Profile</a></p>
+        
+### Collaborators and Contribution Instructions
+
+<p>If you would like to contribute to this project, please <a href="mailto:test>email me</a>.</p>
             
 ### Third-Party Assets
 
-            
+
+## Testing
+<p>test</p>
+
 ## Questions
-<p>For questions, see my profile at <a href="Test">Github</a> or <a href="mailto:dljohnson1313@gmail.com">email me</a>.</p>
+<p>For questions, see my profile at <a href="test">Github</a> or <a href="mailto:test">email me</a>.</p>
             
 ## License
 <p>MIT</p>
