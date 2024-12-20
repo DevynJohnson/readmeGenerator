@@ -1,4 +1,4 @@
-# readmeGenerator
+# readmeGenerator [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 <p>This application creates a detailed README.md file through a series of prompts answered through the command line using the inquirer npm package. By using this application to create their README.md file, users save time and have a professional README file created for them.</p>
@@ -63,7 +63,7 @@ The application will present a series of prompts about your project to collect t
 <h3>Step 6: Find Your README.md File</h3>
 <p>After completing the previous step, this application will generate a README.md file inside of a new folder in the project directory titled "Generated README". Open the file and verify the contents have been creating using your input to the prompts.</p>
 
-## Troubleshooting
+## Troubleshooting/Questions
 <p>In the case the application is not functioning properly, attempt the following:</p>
 <ol>
 <li>Check if Node.js and npm are installed correctly by using the following commands to check for the version currently installed on your system, respectively:<br>
@@ -72,7 +72,8 @@ The application will present a series of prompts about your project to collect t
 <code>npm -v</code></li>
 <li>Ensure all dependencies are installed by re-running
 <code>npm install</code></li>
-<li>Ensure index.js file is located in the root directory of the cloned repository.
+<li>Ensure index.js file is located in the root directory of the cloned repository.</li>
+<li>Ensure package.json file has <code>"type": "module",</code> on the line above the dependencies.</li>
 <li>Review any error messages in the terminal for information that may help resolve the issue.</li>
 <li>Reach out to <a href="mailto:dljohnson1313@gmail.com?subject=README Generator Issue">dljohnson1313@gmail.com</a> with an explanation of the issue if you are unable to find a solution using the steps above.</li>
 

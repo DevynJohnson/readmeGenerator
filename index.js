@@ -44,14 +44,14 @@ const questions = [ // Array of questions to prompt user for input
     },
     {
         type: 'input',
-        message: 'Please provide a link to your GitHub profile.',
+        message: 'Please provide the full URL link to your GitHub profile.',
         name: 'selfGithub',
     },
 ];
 
 // Define functions
 
-async function askCollaborator() { // Function to collect collaborator information
+async function askCollaborator() { // Function to determine if there are any collaborators on the project
     const { collaborators: hasCollaborators } = await inquirer.prompt([ // Prompt user to answer yes or no to having collaborators}
         {
             type: 'confirm', // Confirm question type prompts user to answer yes or no
@@ -61,7 +61,7 @@ async function askCollaborator() { // Function to collect collaborator informati
     ]);
 
         if (hasCollaborators) { // If user answers yes to having collaborators, run askCollaborator function
-            await collectCollaboratorInfo(); // If user answers yes to having collaborators, run collectCollaboratorInfo function
+            await collectCollaboratorInfo(); // If user answers yes to having collaborators, run collectCollaboratorInfo function to collect collaborator information
         } else { 
             await askThirdPartyAssets(); // If user answers no, run askThirdPartyAssets function defined below to continue with prompts
     };
@@ -71,12 +71,12 @@ async function askCollaborator() { // Function to collect collaborator informati
         const collaboratorAnswers = await inquirer.prompt([ // Prompt user for collaborator information    
         {
             type: 'input',
-            message: 'List the first collaborater to your project',
+            message: 'What is the name of this collaborater to your project?',
             name: 'otherName',
         },
         {
             type: 'input',
-            message: 'Please add a link to their GitHub profile.',
+            message: 'Please add the complete URL link to their GitHub profile.',
             name: 'otherGithub',
         },
         {
@@ -86,19 +86,19 @@ async function askCollaborator() { // Function to collect collaborator informati
         },
     ]);
 
-    collaborators.push({ // Push collaborator information to collaborators array
+    collaborators.push({ // Push collaborator object to collaborators array
         name: collaboratorAnswers.otherName,
         link: collaboratorAnswers.otherGithub,
     });
     
-    if (collaboratorAnswers.addAnotherCollaborator) { // If user answers yes to adding another collaborator, run askCollaborator function again
+    if (collaboratorAnswers.addAnotherCollaborator) { // If user answers yes to adding another collaborator, run function again
         await collectCollaboratorInfo();
     } else { // If user answers no, run askThirdPartyAssets function defined below to continue with prompts
         await askThirdPartyAssets();
     }
 };
 
-async function askThirdPartyAssets() { // Function to collect third-party asset information
+async function askThirdPartyAssets() { // Function to determine if any third party assets were used in the creation of the project
     const { thirdPartyAssets } = await inquirer.prompt([ // Prompt user to answer yes or no to using third-party assets
         {
             type: 'confirm',
@@ -107,7 +107,7 @@ async function askThirdPartyAssets() { // Function to collect third-party asset 
         }
     ]);
     
-        if (thirdPartyAssets) { // If user answers yes to using third-party assets, run askThirdPartyLink function
+        if (thirdPartyAssets) { // If user answers yes to using third-party assets, run askThirdPartyLink function to collect asset information
             await collectThirdPartyInfo();
         } else { // If user answers no, run askLicense function defined below to continue with prompts
             await askLicense();
@@ -132,12 +132,12 @@ async function collectThirdPartyInfo() { // Function to collect third-party asse
         }
     ]);
 
-    thirdPartyAnswers.push({ // Push third-party asset information to thirdPartyAnswers array
+    thirdPartyAnswers.push({ // Push third-party asset object to thirdPartyAnswers array
         name: thirdPartyInfoAnswers.thirdPartyName,
         link: thirdPartyInfoAnswers.thirdPartyLink,
     });
 
-        if (thirdPartyInfoAnswers.addAnotherThirdParty) { // If user answers yes to adding another third-party asset, run askThirdPartyLink function again
+        if (thirdPartyInfoAnswers.addAnotherThirdParty) { // If user answers yes to adding another third-party asset, run function again
             await collectThirdPartyInfo();
         } else { // If user answers no, run askLicense function defined below to continue with prompts
             await askLicense();
@@ -147,15 +147,15 @@ async function collectThirdPartyInfo() { // Function to collect third-party asse
 async function askLicense() { // Function to prompt user for license information
     const { license } = await inquirer.prompt([
         {
-            type: 'list', // List question type prompts user to select an option from a list
+            type: 'list', // List question type prompts user to select an option from a provided list
             message: 'Which license are you using?',
             choices: ['MIT', 'GNU GPLv3', 'Apache 2.0', 'ISC', 'Other', 'Unlicensed'],
             name: 'license',
         }
     ]);
 
-        if (license === 'Other') { // If user selects 'Other' as license option, prompt user for license information
-            const otherLicenseInfo = await inquirer.prompt([ // Prompt user for license information if license is not one of the provided options
+        if (license === 'Other') { // If user selects 'Other' as license option, prompt user for custom license information
+            const otherLicenseInfo = await inquirer.prompt([ 
                 {
                     type: 'input',
                     message: 'Provide the name of the license.',
@@ -163,7 +163,7 @@ async function askLicense() { // Function to prompt user for license information
                 },
                 {
                     type: 'input',
-                    message: 'Provide a link to the license.',
+                    message: 'Provide the full URL link to the license information.',
                     name: 'licenseLink',
                 },
             ]);
@@ -181,7 +181,7 @@ function generateReadme() { // Function to generate README.md file
 # ${answers.title} ${licenseInfo.badge}
             
 ## Description
-${answers.description}
+<p>${answers.description}</p>
             
 ## Table of Contents
 - [Installation](#installation)
@@ -191,27 +191,27 @@ ${answers.description}
 - [License](#license)
             
 ## Installation
-${answers.installation}
+<p>${answers.installation}</p>
             
 ## Usage
-${answers.usage}
+<p>${answers.usage}</p>
             
 ## Credits
 ### Author
-${answers.selfCreditName} | <a href="${answers.selfGithub}">Github Profile</a>
+<p>${answers.selfCreditName} | <a href="${answers.selfGithub}">Github Profile</a></p>
             
 ### Collaborators
-${collaborators.map(collaborator => `${collaborator.name} | <a href="${collaborator.link}">Github Profile</a>`).join('\n')}
+${collaborators.map(collaborator => `<p>${collaborator.name} | <a href="${collaborator.link}">Github Profile</a></p>`).join('')}
             
 ### Third-Party Assets
-${thirdPartyAnswers.map(asset => `${asset.name} | <a href="${asset.link}">Link</a>`).join('\n')}
+${thirdPartyAnswers.map(asset => `<p>${asset.name} | <a href="${asset.link}">${asset.link}</a></p>`).join('')}
             
 ## Questions
-For questions, please contact me via <a href="${answers.selfGithub}">Github</a>.
+<p>For questions, please contact me via <a href="${answers.selfGithub}">Github</a>.</p>
             
 ## License
-${licenseInfo.name}
-License Information: <a href="${licenseInfo.link}">${licenseInfo.link}</a>`;
+<p>${licenseInfo.name}</p>
+<p>License Information: <a href="${licenseInfo.link}">${licenseInfo.link}</a></p>`;
 
     const directory = path.join(process.cwd(), 'Generated README'); // Directory path for generated README.md file
     const filename = path.join(directory, 'README.md'); // File path for generated README.md file
@@ -222,11 +222,11 @@ License Information: <a href="${licenseInfo.link}">${licenseInfo.link}</a>`;
         .catch(err => console.error('Error generating README.md file:', err)); // Log error message to console if README.md file is not successfully created
 };
 
-async function startPrompts() {
+async function startPrompts() { // Function to begin prompting user for input
     const initialAnswers = await inquirer.prompt(questions);
-        Object.assign(answers, initialAnswers);
-        await askCollaborator(); 
+        Object.assign(answers, initialAnswers); // Assign user answers to answers object
+        await askCollaborator(); // Call askCollaborator function to determine if there are any collaborators on the project to move through prompt sections
     };
 
-startPrompts(); // Call startPrompts function to begin prompting user for input               
+startPrompts(); // Call startPrompts function to execute application              
 
