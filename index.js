@@ -39,8 +39,18 @@ const questions = [ // Array of questions to prompt user for input
     },
     {
         type: 'input',
+        message: 'How can a user test or troubleshoot your application.',
+        name: 'testing',
+    },
+    {
+        type: 'input',
         message: 'What is your name?',
         name: 'selfCreditName',
+    },
+    {
+        type: 'input',
+        message: 'What is your email address?',
+        name: 'selfEmail',
     },
     {
         type: 'input',
@@ -187,6 +197,7 @@ function generateReadme() { // Function to generate README.md file
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
+- [Testing](#testing)
 - [Questions](#questions)
 - [License](#license)
             
@@ -199,15 +210,21 @@ function generateReadme() { // Function to generate README.md file
 ## Credits
 ### Author
 <p>${answers.selfCreditName} | <a href="${answers.selfGithub}">Github Profile</a></p>
+
+### Contributions
+<p>If you would like to contribute to this project, please <a href="mailto:${answers.selfEmail}>email me</a>.</p>
             
 ### Collaborators
 ${collaborators.map(collaborator => `<p>${collaborator.name} | <a href="${collaborator.link}">Github Profile</a></p>`).join('')}
             
 ### Third-Party Assets
 ${thirdPartyAnswers.map(asset => `<p>${asset.name} | <a href="${asset.link}">${asset.link}</a></p>`).join('')}
-            
+
+## Testing
+<p>${answers.testing}</p>
+
 ## Questions
-<p>For questions, please contact me via <a href="${answers.selfGithub}">Github</a>.</p>
+<p>For questions, see my profile at <a href="${answers.selfGithub}">Github</a> or <a href="mailto:${answers.selfEmail}">email me</a>.</p>
             
 ## License
 <p>${licenseInfo.name}</p>
