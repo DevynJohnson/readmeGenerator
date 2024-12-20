@@ -33,7 +33,6 @@
 
 <code>cd "project-directory"</code>
 <p>Replace "project-directory" with the path of the folder where this repository was cloned.</p>
-![Screenshot of Change Directory Command](assets/changeDirectory.png)
 
 <h3>Step 3: Install Dependencies</h3>
 <p>Install the required npm packages by running:</p>
@@ -75,7 +74,6 @@ The application will present a series of prompts about your project to collect t
 <code>npm install</code></li>
 <li>Ensure index.js file is located in the root directory of the cloned repository.</li>
 <li>Ensure package.json file has <code>"type": "module",</code> on the line above the dependencies.</li>
-![Screenshot of package.json file with proper type](./assets/typeModule.png)
 <li>Review any error messages in the terminal for information that may help resolve the issue.</li>
 <li>Reach out to <a href="mailto:dljohnson1313@gmail.com?subject=README Generator Issue">dljohnson1313@gmail.com</a> with an explanation of the issue if you are unable to find a solution using the steps above.</li>
 
