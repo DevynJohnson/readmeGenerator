@@ -78,7 +78,7 @@ The application will present a series of prompts about your project to collect t
 <li>Reach out to <a href="mailto:dljohnson1313@gmail.com?subject=README Generator Issue">dljohnson1313@gmail.com</a> with an explanation of the issue if you are unable to find a solution using the steps above.</li>
 
 ## Credits
-<p>This project was created by Devyn Johnson. <a href="https://github.com/DevynJohnson">Github</a> | <a href="https://www.linkedin.com/in/devyn-johnson-a5259213b">LinkedIn</a> | <a href="https://devynjohnson.github.io/online-portfolio/">Portfolio</a>.</p>
+<p>This project was created by Devyn Johnson. <a href="https://github.com/DevynJohnson">Github</a> | <a href="https://www.linkedin.com/in/devyn-johnson-a5259213b">LinkedIn</a> | <a href="https://devynjohnson.me">Portfolio</a>.</p>
 
 <p>This application uses the inquirer npm package, Copyright (c) 2023 by <a href="https://github.com/SBoudrias">Simon Boudrias</a>, which is licensed under the <a href="https://opensource.org/license/MIT">MIT License</a>.</p>
 
